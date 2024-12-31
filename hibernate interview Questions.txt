@@ -1,0 +1,97 @@
+hibernate interview Questions and answers
+1) get() :
+ - get() method only hits the database if the object is not present in the session cache.
+ -If the same object is already present in the cache then it returns previously stored data from the cache.
+ -get() method returns null if there is no object present in the database.
+ 
+2) Load() : 
+ - load() method does not retrieve the object from the database when it is called.
+ - Instead, it returns a proxy object that represents the object. 
+ - This technique is known as “lazy loading” and it is used to improve the performance of Hibernate by avoiding unnecessary database queries.
+ -load() method throws ObjectNotFoundException if there is no object found in the database.
+
+3)Why Caching is So Important for Improving Application Performance?
+- Reduced Latency
+- Increased Throughput
+- Improved Scalability
+- Reduced Resource Utilization
+
+4) first level cache:
+-The session cache is a cache within a database session’s scope.
+-Whenever Hibernate retrieves an entity from the database, it stores a copy of that entity in the first-level cache associated with the current session. 
+-If the application requests the same entity again within the same session, Hibernate can simply retrieve it from the first-level cache instead of querying the database again.
+-This caching mechanism can significantly improve the performance of Hibernate applications because it reduces the number of database queries that need to be executed.
+
+Advantages of First-Level Cache
+- Performance
+- Consistency
+- Automatic
+
+Disadvantage 
+- Memory Consumption
+- Stale Data
+- Limited Scope
+
+5) Second level cache : 
+- It’s mainly used to store data and instructions that can help speed up your computer.
+-  It is usually built on top of high-speed memory chips called SRAM, which stands for Static Random Access Memory.
+- If it doesn’t find the data or instructions, it loads them from the hard drive or other storage device and loads them into the main memory and into the cache.
+
+
+
+-What is Spring Boot, and how does it differ from Spring Framework?
+-What is an embedded container in Spring Boot, and why is it important?
+-What is Spring Security, and how does it work?
+-How does Spring Boot handle database connections?
+-How does Spring Boot handle error handling and exception handling?
+-What is Spring Data, and how does it work with Spring Boot?
+-What are the different types of Bean scopes in Spring Boot?
+-What is the difference between Spring Boot and Spring MVC?
+-What is the purpose of the @Autowired annotation?
+-What is the difference between the @Component, @Service, and @Repository annotations in Spring Boot?
+-What is the use of profiles in Spring Boot?
+-How can you externalize the configuration properties in Spring Boot?
+-What are the different types of databases that are supported by Spring Boot?
+- What does the @SpringBootApplication annotation do internally?
+- What is the purpose of using @ComponentScan in the class files?
+- How does a spring boot application get started?
+- What is Spring Boot CLI and what are its benefits?
+- What is the difference between @RestController and @Controller in Spring Boot?
+- What is an IOC container?
+- Describe the flow of HTTPS requests through the Spring Boot application?
+- What is Spring Actuator? What are its advantages?
+- What are the actuator-provided endpoints used for monitoring the Spring boot application?
+-What is dependency Injection?
+-Explain @RestController annotation in Spring boot?
+
+-What is the difference between update and merge method?
+-What is the difference between the get and load method?
+-explain hibernate architecture?
+-. What is the difference between first-level cache and second-level cache?
+-Can you tell the difference between getCurrentSession and openSession methods?
+- Differentiate between save () and saveOrUpdate() methods in the hibernate session?
+-What are the states of the object in Hibernate?
+- How to make an immutable class in Hibernate?
+- What is automatic dirty checking in Hibernate?
+- what is N+1 query problem and how to resolved it? @batchsize Annotation:
+ans-> Eager fetching (fetch = FetchType.EAGER): Load associations in the initial query, but use cautiously with large datasets.
+JOIN FETCH: Use JPQL/HQL to load associations eagerly in a single query.
+@EntityGraph: Dynamically define which relationships should be eagerly loaded.
+DISTINCT keyword: Use to avoid duplicate records in the result set when joining.
+Pagination: Reduce the data set size by fetching results in smaller chunks.
+Batch Size: Use Hibernate’s @BatchSize to load related entities in batches.
+By applying one or more of these solutions, you can effectively solve the N+1 query problem and improve the performance of your application when working with Hibernate.
+
+-Is Hibernate prone to SQL injection attacks?
+-What are the most commonly used annotations available to support hibernate mapping?
+
+
+i request you User Login:
+  - Via email and password
+  - Via Google (Good to have knowledge and implementation of grants type)
+
+JWT Authentication:
+  - Our server will generate the JWT token for both registration methods. proper steps with project structure and how to run this project and how to check give me proper example 
+-What is the criteria API in Hibernate?
+
+
